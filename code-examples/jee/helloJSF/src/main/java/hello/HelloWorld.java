@@ -10,26 +10,54 @@ import javax.faces.bean.SessionScoped;
 @ApplicationScoped
 public class HelloWorld implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private String firstName = "Vorname";
-	private String lastName = "Nachname";
+	private String input = "1.0";
+	private String output = "1.0";
 
-	public String getFirstName() {
-		return firstName;
+	public String getInput() {
+		return input;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setInput(String input) {
+		this.input = input;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getOutput() {
+		return output;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setOutput(String output) {
+		this.output = output;
 	}
 
-	public String getGreeting() {
-		return "Hello" + " " + firstName + " " + lastName + "!";
+	
+	public String ctof() {
+		double temp = Double.parseDouble(input)*9/5+32; 
+		output = String.valueOf(temp);
+		return output;
+	}
+	public String ctok() {
+		double temp = Double.parseDouble(input)+273.15; 
+		output = String.valueOf(temp);
+		return output;
+	}
+	public String ktoc() {
+		double temp = Double.parseDouble(input)-273.15; 
+		output = String.valueOf(temp);
+		return output;
+	}
+	public String ktof() {
+		double temp = Double.parseDouble(input)*9/5-459.67; 
+		output = String.valueOf(temp);
+		return output;
+	}
+	public String ftoc() {
+		double temp = (Double.parseDouble(input)-32)*5/9; 
+		output = String.valueOf(temp);
+		return output;
+	}
+	public String ftok() {
+		double temp = (Double.parseDouble(input)+459.67)*5/9;
+		output = String.valueOf(temp);
+		return output;
 	}
 }

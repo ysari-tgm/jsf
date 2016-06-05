@@ -14,36 +14,69 @@
 
 <h:body>
 	<h:form>
-		<p:panel header="Hello User!">
+		<p:panel header="Temperature Converter">
 			<h:panelGrid columns="2" cellpadding="4">
-				<h:outputText value="First Name: " />
-				<p:inputText value="#{helloWorld.firstName}" />
+				<h:outputText value="Input: "/>
+				<p:inputText value="#{helloWorld.input}" />
 
-				<h:outputText value="Last Name: " />
-				<p:inputText value="#{helloWorld.lastName}" />
-
-				<p:commandButton value="C to F" update="display"
-					oncomplete="PF('dlg').show()" />
-				<p:commandButton value="C to K" update="display"
-					oncomplete="PF('dlg').show()" />
-				<p:commandButton value="K to C" update="display"
-					oncomplete="PF('dlg').show()" />
-				<p:commandButton value="K to F" update="display"
-					oncomplete="PF('dlg').show()" />
-				<p:commandButton value="F to C" update="display"
-					oncomplete="PF('dlg').show()" />
-				<p:commandButton value="F to K" update="display"
-					oncomplete="PF('dlg').show()" />
+				<p:commandButton value="C to F" update="display2"
+					oncomplete="PF('dlg2').show()" />
+				<p:commandButton value="C to K" update="display3"
+					oncomplete="PF('dlg3').show()" />
+				<p:commandButton value="K to C" update="display4"
+					oncomplete="PF('dlg4').show()" />
+				<p:commandButton value="K to F" update="display5"
+					oncomplete="PF('dlg5').show()" />
+				<p:commandButton value="F to C" update="display6"
+					oncomplete="PF('dlg6').show()" />
+				<p:commandButton value="F to K" update="display7"
+					oncomplete="PF('dlg7').show()" />
 			</h:panelGrid>
 		</p:panel>
 
-		<p:dialog header="Greeting" widgetVar="dlg" modal="true"
+		<p:dialog header="Output" widgetVar="dlg2" modal="true"
 			resizable="false">
-			<h:panelGrid id="display" columns="1" cellpadding="4">
-				<h:outputText value="#{helloWorld.greeting}" />
-
+			<h:panelGrid id="display2" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ctof()}" />	
 			</h:panelGrid>
 		</p:dialog>
+		
+		<p:dialog header="Output" widgetVar="dlg3" modal="true"
+			resizable="false">
+			<h:panelGrid id="display3" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ctok()}" />	
+			</h:panelGrid>
+		</p:dialog>
+		
+		<p:dialog header="Output" widgetVar="dlg4" modal="true"
+			resizable="false">
+			<h:panelGrid id="display4" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ktoc()}" />	
+			</h:panelGrid>
+		</p:dialog>
+		
+		<p:dialog header="Output" widgetVar="dlg5" modal="true"
+			resizable="false">
+			<h:panelGrid id="display5" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ktof()}" />	
+			</h:panelGrid>
+		</p:dialog>
+		
+		<p:dialog header="Output" widgetVar="dlg6" modal="true"
+			resizable="false">
+			<h:panelGrid id="display6" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ftoc()}" />	
+			</h:panelGrid>
+		</p:dialog>
+		
+		<p:dialog header="Output" widgetVar="dlg7" modal="true"
+			resizable="false">
+			<h:panelGrid id="display7" columns="1" cellpadding="4">
+				<h:outputText value="#{helloWorld.ftok()}" />	
+			</h:panelGrid>
+			
+		</p:dialog>
+		
 	</h:form>
 </h:body>
 </html>
