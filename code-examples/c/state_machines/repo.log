@@ -1,0 +1,59 @@
+commit 4774c7bb04726933f96d6a267dceb08bd8888338
+Author: efrantar-tgm <efrantar@tgm.ac.at>
+Date:   Wed Oct 1 22:40:52 2014 +0200
+
+    final commit before submission
+
+ doc/protocol.pdf                                  | Bin 0 -> 739089 bytes
+ src/state_machines/state_centric_wo_transitions.c |   1 +
+ 2 files changed, 1 insertion(+)
+
+commit 301ca76f25d4e34f6d63e69d7846fc2f67c7bef0
+Author: efrantar-tgm <efrantar@tgm.ac.at>
+Date:   Wed Oct 1 20:54:10 2014 +0200
+
+    finished implementing
+
+ makefile                                          |   5 +-
+ src/headers/timer.h                               |   0
+ src/headers/trafficlight.h                        |   0
+ src/state_machines/event_centric.c                |   1 -
+ src/state_machines/state_centric.c                |   1 -
+ src/state_machines/state_centric_wo_transitions.c |   1 -
+ src/state_machines/state_pattern.c                | 143 ++++++++++++++++++++++
+ 7 files changed, 146 insertions(+), 5 deletions(-)
+
+commit e538956b958a326438af70c27aeb0139e2dd4185
+Author: efrantar-tgm <efrantar@tgm.ac.at>
+Date:   Wed Oct 1 19:46:46 2014 +0200
+
+    makefile now working
+
+ makefile                                          |  49 ++++++---
+ src/headers/trafficlight.h                        |   3 -
+ src/state_machines/event_centric.c                |   4 +-
+ src/state_machines/state_centric.c                |   4 +-
+ src/state_machines/state_centric_wo_transitions.c |   4 +-
+ src/state_machines/state_pattern.c                | 122 ----------------------
+ src/state_machines/table_driven.c                 |   4 +-
+ src/timer.c                                       |   2 +-
+ src/trafficlight.c                                |   4 +-
+ 9 files changed, 44 insertions(+), 152 deletions(-)
+
+commit 2289ef7f7baf43b51c0e6a01c612fe74a2a4caef
+Author: efrantar-tgm <efrantar@tgm.ac.at>
+Date:   Wed Oct 1 18:50:19 2014 +0200
+
+    added everything I had
+
+ makefile                                          |  24 ++++
+ src/headers/timer.h                               |  22 ++++
+ src/headers/trafficlight.h                        | 109 ++++++++++++++++++
+ src/state_machines/event_centric.c                |  98 ++++++++++++++++
+ src/state_machines/state_centric.c                |  95 ++++++++++++++++
+ src/state_machines/state_centric_wo_transitions.c |  89 +++++++++++++++
+ src/state_machines/state_pattern.c                | 122 ++++++++++++++++++++
+ src/state_machines/table_driven.c                 |  87 ++++++++++++++
+ src/timer.c                                       |  38 +++++++
+ src/trafficlight.c                                | 132 ++++++++++++++++++++++
+ 10 files changed, 816 insertions(+)

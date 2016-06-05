@@ -1,0 +1,3 @@
+Aufgabenstellung
+
+Der Benutzer soll nach einem Zahlensystem (bin, okt, dez, hex) gefragt werden, aus dem er eine gewünschte positive ganze Zahl in das Dezimalsystem umwandelt. Ihr Programm soll die Eingabe auf die Richtigkeit bezüglich des gewählten Zahlensystems überprüfen. Die Eingabe muss auch auf die mögliche Größenbeschränkung der Ausgabe kontrolliert werden (unsigned long). 

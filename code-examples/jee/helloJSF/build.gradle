@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+// Startpoint for gretty is https://plugins.gradle.org/plugin/org.akhikhl.gretty
+// Documentation can be found here http://akhikhl.github.io/gretty-doc/Gretty-configuration.html
+apply plugin: 'org.akhikhl.gretty'
+
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+
+	dependencies {
+		classpath "org.akhikhl.gretty:gretty:1.2.4"
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'javax.servlet:javax.servlet-api:3.1.0'
+	compile 'com.sun.faces:jsf-api:2.2.8-15' 
+	compile 'org.primefaces:primefaces:5.2'
+	compile 'com.sun.faces:jsf-impl:2.2.8-15'
+	// all libs will be used on runtime too.
+	// so we need no runtime definitions!
+	// runtime 'com.sun.faces:jsf-api:2.2.8-15'
+}
+
+gretty {
+	// Possible servletContainer values are 'jetty7', 'jetty8', 'jetty9', 'tomcat7', 'tomcat8'. Default is 'jetty9'.
+	servletContainer = 'jetty9'
+	host = 'localhost'
+	httpPort = 1234
+}

@@ -1,0 +1,23 @@
+Example connection with libpgxx
+===============================
+
+As postgres user add new Database and a new DB-User
+==
+CREATE USER accounting WITH LOGIN PASSWORD 'accounting';
+CREATE DATABASE company OWNER accounting;
+GRANT ALL PRIVILEGES ON DATABASE company TO accounting;
+
+Don't forget to add the new User to the pg_hba.conf file
+==
+host    company         accounting      192.168.188.0/24        md5
+
+As new DB-User create the Table
+==
+create table Employee ( id serial primary key, name text not null, department int not null);
+
+Links
+==
+http://pqxx.org/development/libpqxx/wiki/EmployeeExample
+http://pqxx.org/devprojects/libpqxx/doc/4.0/html/Reference/index.html
+http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+
